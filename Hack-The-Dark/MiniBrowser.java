@@ -7,15 +7,15 @@ import javax.swing.event.*;
 
 public class MiniBrowser{
 	
-	private JFrame frame;
+	private Start frame;
 	
 	private JEditorPane display;
 	
 	//constructor
-	public MiniBrowser(JFrame fram){
+	public MiniBrowser(Start fram ){
 		frame = fram;
-		loadCrap("file:///C:/Users/Martynas/git/Hack-The-Dark2/try.htm");
 		display = new JEditorPane();
+		loadCrap("file:///C:/Users/Martynas/git/Hack-The-Dark2/try.htm");
 		display.setEditable(false);
 		frame.add(new JScrollPane(display), BorderLayout.CENTER);
 	}
