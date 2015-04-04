@@ -62,6 +62,7 @@ public class Start extends JPanel{
 			
 		});
 		
+
 		MiniBrowser browserWindow = new MiniBrowser(this, 100, 200, 500, 100);
 	}
 	

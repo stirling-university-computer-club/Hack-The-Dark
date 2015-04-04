@@ -17,13 +17,12 @@ public class MiniBrowser{
 		frame = fram;
 		display = new JEditorPane();
 		loadCrap("file:///C:/Users/Martynas/git/Hack-The-Dark2/try.htm");
-		JScrollPane scroll = new JScrollPane(display);
-		scroll.setLocation(x, y);
-		scroll.setSize(width, height);
-		display.setLocation(x, y);
-		display.setSize(width, height);
+		//display.setBounds(0,0,100,100);
+		frame.setLayout(null);
+		display.setSize(100, 30);
+		display.setLocation(95, 45);
 		display.setEditable(false);
-		frame.add(scroll);
+		frame.add(new JScrollPane(display));
 	}
 	
 	//load crap to display on the screen
