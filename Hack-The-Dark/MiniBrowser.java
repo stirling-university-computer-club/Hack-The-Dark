@@ -14,7 +14,7 @@ public class MiniBrowser{
 	//constructor
 	public MiniBrowser(JFrame fram){
 		frame = fram;
-		loadCrap("   URL AS A STRING   ");
+		loadCrap("file:///C:/Users/Martynas/git/Hack-The-Dark2/try.htm");
 		display = new JEditorPane();
 		display.setEditable(false);
 		frame.add(new JScrollPane(display), BorderLayout.CENTER);
