@@ -19,7 +19,7 @@ public class Start extends JPanel{
 	          bg = ImageIO.read(new File("assets/mainBg.gif"));
 		} catch (IOException ex) {}
 		
-		MiniBrowser browserWindow = new MiniBrowser(this);
+		MiniBrowser browserWindow = new MiniBrowser(this, 100, 200, 500, 100);
 	}
 	
 	public void paintComponent(Graphics g) {
