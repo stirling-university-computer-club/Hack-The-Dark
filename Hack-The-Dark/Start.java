@@ -41,8 +41,7 @@ public class Start extends JPanel{
 				// instructions
 				if ((x > 0) && (x < 0) && (y > 0) && (y < 0)){
 					
-				}
-				
+				}				
 				// quit
 				if ((x > 0) && (x < 0) && (y > 0) && (y < 0)){
 					
