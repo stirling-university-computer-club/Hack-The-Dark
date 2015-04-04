@@ -60,6 +60,7 @@ public class Start extends JPanel{
 			@Override
 			public void mouseReleased(MouseEvent arg0) {}
 			
+			
 		});
 		
 
