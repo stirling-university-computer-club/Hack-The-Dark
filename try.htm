@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> 3rd JavaScript example </title>
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8" >
+
+<link rel="stylesheet" type="text/css" href="largeformat.css" />
+
+</head>
+
+<body bgcolor="#ffffff">
+<h2>here is a third JavaScript example</h2>
+<p> JavaScript allows the declaration of variables.
+<p>the code inside the script  tag is
+<p>
+<tt>
+today = new Date() ;
+</tt>
+<p> creates a Date object, and stores it in the variable <tt>today</tt>.</p>
+<p><tt>
+window.document.write("&lt;p&gt;&lt;b&gt;today's date is &lt/b&gt"
++ today.getDate() + " " + (today.getMonth()+1) + " " + today.getYear()) ) ;
+</tt>
+</p>
+<p> writes out the day, month, and year, by using methods in the Date object.
+<tt>
+window.document.write("&lt;p&gt;&lt;b&gt;the time is&lt/b&gt"
++ today.getHours() + ":" + today.getMinutes()) ;
+</tt>
+<p> writes out the time, using methods in the Date object.
+<tt>
+window.document.write("&lt;p&gt;&lt;b&gt;this can also be written out as &lt/b&gt"
++ today.toGMTString()) ;
+</tt>
+<p> Can write out the whole content of the Date object as a single string</p>
+
+<p>the getDate() method of date returns the day of the month.
+<p> the getMonth() method returns the month <b>as a number between 0 and 11 </b>.
+<p> the getYear() returns the year (as a number since 1900).
+<p> the getHours() method returns the hour of the day, and the getMinutes() method returns the minutes of the time.
+<p> the toGMTString() takes the internal date format and returns a complete
+string of the date and time.
+<p>
+
+<script>
+today = new Date() ;
+window.document.write("<p><b> Happy Birthday! <\/b>" + today.getDate() + " "
++ (today.getMonth()+1) + " " + (today.getYear() + 1900)) ;
+window.document.write("<p><b>the time is <\/b>" + today.getHours() + ":"
++ today.getMinutes()) ;
+window.document.write("<p><b>this can also be written out as <\/b>"
++ today.toGMTString()) ;
+
+</script>
+<hr>
+back to <a href="index.html">JavaScript example page</a>.
+</body>
+</html>
