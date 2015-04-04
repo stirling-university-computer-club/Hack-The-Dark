@@ -23,6 +23,7 @@ public class Main {
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         start(f);
         f.setVisible(true);
+        
 	}
 	
 	public static void start(JFrame frame){
