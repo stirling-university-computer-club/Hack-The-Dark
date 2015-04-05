@@ -25,6 +25,7 @@ public class Main {
 		JFrame f = new JFrame("Hack The Dark");
 		f.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.setUndecorated(true);
         start(f);        
 	}
 	
@@ -37,9 +38,7 @@ public class Main {
         frame.setVisible(true);
 	}
 	public static void process(JFrame frame, int s){
-		
-		frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-				
+						
 		JLayeredPane lpane = new JLayeredPane();
 		frame.setLayout(new BorderLayout());
 		frame.add(lpane);
@@ -57,18 +56,13 @@ public class Main {
         lpane.add(backPanel, new Integer(0), 0);
         lpane.add(textPanel, new Integer(1), 0);
 
-        frame.setAlwaysOnTop(true);
-        frame.setUndecorated(true);
-		frame.setExtendedState(frame.MAXIMIZED_BOTH); 
+        frame.setAlwaysOnTop(true); 
         frame.setVisible(true);
         
 	}
 	public static void output(JFrame frame, int s){
 		Editor.writer();		
-		
-        frame.setAlwaysOnTop(false);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
+				
 		JLayeredPane lpane = new JLayeredPane();
 		frame.setLayout(new BorderLayout());
 		frame.add(lpane);

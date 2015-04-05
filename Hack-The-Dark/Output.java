@@ -62,7 +62,7 @@ public class Output extends JPanel{
 				for (int i = 0; i < 5; i++){
 					if ((x > starssX + i * starssAddX) && (x < starssX + (int) (Main.SCREEN_WIDTH / 19.2f) + i * starssAddX) && (y > (Main.SCREEN_HEIGHT / 1.15f)) && (y < starssY)){
 						stars = i+1;
-						switch (stars) {
+						switch (stars - 1) {
 						case 0:
 							evaluation = "Better luck next time!";
 							break;
@@ -76,7 +76,7 @@ public class Output extends JPanel{
 							evaluation = "Just a few more steps and you will reach the top!";
 							break;
 						case 4:
-							evaluation = "Congradulations, I knew you were the best!";
+							evaluation = "Congratulations, I knew you were the best!";
 							break;
 						}
 						repaint();
