@@ -22,9 +22,9 @@ public class Difficulty extends JPanel{
 						medium_x = (int) (Main.SCREEN_WIDTH / 2.91f), medium_y = (int) (Main.SCREEN_HEIGHT / 3.6f), 
 						hard_x = (int) (Main.SCREEN_WIDTH / 1.5f), hard_y = (int) (Main.SCREEN_HEIGHT / 3.6f);
 	
-	final private int start_x = 1455, start_y = 941;
-	final private int start_xx = 1794, start_yy = 984;
-	
+	final private int start_x = (int) (Main.SCREEN_WIDTH / 1.32f), start_y = (int) (Main.SCREEN_HEIGHT / 1.15f);
+	final private int start_xx = (int) (Main.SCREEN_WIDTH / 1.01f), start_yy = (int) (Main.SCREEN_HEIGHT / 1.10f);
+
 	private int selected = 1; 
 	
 	public Difficulty(final JFrame frame){
@@ -92,17 +92,27 @@ public class Difficulty extends JPanel{
 		g.setFont(new Font("Cambria", Font.PLAIN, Main.SCREEN_WIDTH / 24));
 		g.drawString("Choose a design you wish to hack:", 200, 100);
 
+		// 											9.6f		19.2f
+		
 		// difficulty
 		g.setFont(new Font("Cambria", Font.PLAIN, Main.SCREEN_WIDTH / 35));
 		g.drawString("Easy", 250, 250);
 		g.drawString("Medium", 850, 250);
 		g.drawString("Hard", 1490, 250);
 		
+		//					7.68f 4.32f
+		//					2.26f 4.32f
+		//					1.29f 4.32f
+		
 		// time
 		g.setFont(new Font("Cambria", Font.PLAIN, Main.SCREEN_WIDTH / 40));
 		g.drawString("15 min", 250, 750);
 		g.drawString("15 min", 850, 750);
 		g.drawString("10 min", 1490, 750);
+		
+		//						7.68f 1.44f
+		//						2.26f 1.44f
+		//						1.29f 1.44f
 		
 		// designs
 		g.drawImage(easyMLH, easy_x, easy_y, size_x, size_y, null);
@@ -115,6 +125,8 @@ public class Difficulty extends JPanel{
 		// starting game
 		g.drawString("[ Start Game ]", 1450, 975);
 	}
+	
+	//									1.32f 1.11f
 	
 	public void stroke(Graphics g, int strength) {
 		int x = 0, y = 0;
