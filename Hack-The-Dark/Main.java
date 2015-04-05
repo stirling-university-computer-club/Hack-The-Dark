@@ -21,8 +21,7 @@ public class Main {
 		JFrame f = new JFrame("Hack The Dark");
 		f.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        start(f);
-        
+        start(f);        
 	}
 	
 	public static void start(JFrame frame){
