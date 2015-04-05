@@ -112,7 +112,7 @@ public class Process extends JPanel{
 		else		 sMin = "" + min;
 		if(sec < 10) sSec = "0" + sec;
 		else		 sSec = "" + sec;
-		g.drawString("Time left: " + sMin + ":" + sSec, (int) (Main.SCREEN_WIDTH / 9.6f), (int) (Main.SCREEN_HEIGHT/19.2f));
+		g.drawString("Time left: " + sMin + ":" + sSec, (int) (Main.SCREEN_WIDTH / 9.6f), (int) (Main.SCREEN_HEIGHT/16f));
 		
 		g.drawString("Code Here: ", (int) (Main.SCREEN_WIDTH / 9.6f), (int) (Main.SCREEN_HEIGHT/5.4f));
 		g.drawString("Goal: ", (int) (Main.SCREEN_WIDTH / 1.75f), (int) (Main.SCREEN_HEIGHT/5.4f));

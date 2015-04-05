@@ -1,4 +1,7 @@
 import java.awt.BorderLayout;
+import java.awt.DisplayMode;
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 
@@ -94,5 +97,69 @@ public class Main {
 
 	public static void exit(JFrame frame){
 		frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
-	}
+	}/*
+	 /**
+     * Method allows changing whether this window is displayed in fullscreen or
+     * windowed mode.
+     * @param fullscreen true = change to fullscreen,
+     *                   false = change to windowed
+     */
+	/*
+    public void setFullscreen( boolean fullscreen, JFrame frame )
+    {
+        //get a reference to the device.
+        GraphicsDevice device  = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
+        DisplayMode dispMode = device.getDisplayMode();
+        //save the old display mode before changing it.
+        DisplayMode dispModeOld = device.getDisplayMode();
+
+        if( frame.fullscreen != fullscreen )
+        { //are we actually changing modes.
+            //change modes.
+        	frame.fullscreen = fullscreen;
+            // toggle fullscreen mode
+            if( !fullscreen )
+            {
+                //change to windowed mode.
+                //set the display mode back to the what it was when
+                //the program was launched.
+                device.setDisplayMode(dispModeOld);
+                //hide the frame so we can change it.
+                frame.setVisible(false);
+                //remove the frame from being displayable.
+                frame.dispose();
+                //put the borders back on the frame.
+                frame.setUndecorated(false);
+                //needed to unset this window as the fullscreen window.
+                device.setFullScreenWindow(null);
+                //recenter window
+                frame.setLocationRelativeTo(null);
+                frame.setResizable(true);
+
+                //reset the display mode to what it was before
+                //we changed it.
+                frame.setVisible(true);
+
+            }
+            else
+            { //change to fullscreen.
+                //hide everything
+            	frame.setVisible(false);
+                //remove the frame from being displayable.
+            	frame.dispose();
+                //remove borders around the frame
+            	frame.setUndecorated(true);
+                //make the window fullscreen.
+                device.setFullScreenWindow(this);
+                //attempt to change the screen resolution.
+                device.setDisplayMode(dispMode);
+                frame.setResizable(false);
+                frame.setAlwaysOnTop(false);
+                //show the frame
+                frame.setVisible(true);
+            }
+            //make sure that the screen is refreshed.
+            frame.repaint();
+        }
+    }*/
 }

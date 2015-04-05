@@ -110,7 +110,7 @@ public class Output extends JPanel{
 
 		g.setColor(new Color(0.6f, 0.6f, 0.6f, 1));
 		g.setFont(new Font("Cambria", Font.PLAIN, Main.SCREEN_WIDTH / 35));
-		g.drawString(evaluation, (int) (Main.SCREEN_WIDTH / 9.6f), (int) (Main.SCREEN_HEIGHT/16f));
+		g.drawString(evaluation, (int) (Main.SCREEN_WIDTH / 9.6f), (int) (Main.SCREEN_HEIGHT/13f));
 		g.drawString("Goal: ", (int) (Main.SCREEN_WIDTH / 1.75f), (int) (Main.SCREEN_HEIGHT/5.4f));
 		g.drawImage(goal, (int) (Main.SCREEN_WIDTH / 1.96f), (int) (Main.SCREEN_HEIGHT/3.97f), (int) (Main.SCREEN_WIDTH / 2.13f), (int) (Main.SCREEN_HEIGHT/1.95f), null);
 
