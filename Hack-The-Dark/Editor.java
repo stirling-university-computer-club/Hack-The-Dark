@@ -2,27 +2,24 @@ import java.awt.Container;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
-import javax.swing.JFileChooser;
-import javax.swing.JFrame;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
+import javax.swing.*;
 
 
 public class Editor extends JFrame implements ActionListener
 {
 	private static final int FRAME_WIDTH = 400;
     private static final int FRAME_HEIGHT = 400;
-    private static final int AREA_ROWS = 20;
+    private static final int AREA_ROWS = 15;
     private static final int AREA_COLUMNS = 30;
 	
-	protected JTextArea testEditor;
+	private static JTextArea testEditor;
+	private JButton tempButton;
 	
-	protected JFileChooser fileChooser;
-	protected File currentFile;
+	private static File currentFile;
+	
+	private static FileWriter out;
 	
 	public static void main(String[] args)
 	{
@@ -40,30 +37,36 @@ public class Editor extends JFrame implements ActionListener
         window.setLayout(new FlowLayout() );
         
         testEditor = new JTextArea(AREA_ROWS, AREA_COLUMNS);
-        testEditor.setText("");
+        testEditor.setText
+        ("<!DOCTYPE html><html><head><title>Hack The Dark</title></head><body>Write your code here</body></html>");
         testEditor.setEditable(true);
 
         JScrollPane scrollPane = new JScrollPane(testEditor);
         window.add(scrollPane);
         
-        fileChooser = new JFileChooser();
-		fileChooser.setCurrentDirectory(new File("."));
+		tempButton = new JButton("THIS");
+		tempButton.addActionListener(this);
+		window.add(tempButton);
+		}
+
+	public static void Writer() throws FileNotFoundException
+	{
+		
+		Object inputText = testEditor.getText();
+		PrintStream ps = new PrintStream(new FileOutputStream("htmltest.html", true));
+		ps.println(inputText);
+		ps.close();
+	}
+	
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource()==tempButton)
+		{ try {
+			Editor.Writer();
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} } 
 		}
 		
-			public void actionPerformed( ActionEvent e )
-		    {
-			if (e.getSource() == testEditor)
-	        {
-				FileWriter out;
-				try {
-				out = new FileWriter(new File ("htmloutput.html"));
-	    			testEditor.write(out);
-	    			out.close();
-					}
-				catch (IOException ex) {
-		    	ex.printStackTrace();
-		    	}
-	        }
+	}
 
-}
-}
