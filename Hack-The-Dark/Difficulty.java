@@ -17,8 +17,10 @@ public class Difficulty extends JPanel{
 	private BufferedImage bg;
 
 	private BufferedImage easyMLH, mediumMLH, hardMLH;
-	final private int size_x = 600, size_y = 370; 
-	final private int easy_x = 40, easy_y = 300, medium_x = 660, medium_y = 300, hard_x = 1280, hard_y = 300;
+	final private int size_x = (int) (Main.SCREEN_WIDTH / 3.2f), size_y = (int) (Main.SCREEN_HEIGHT / 2.91f); 
+	final private int easy_x = (int) (Main.SCREEN_WIDTH / 48),   easy_y = (int) (Main.SCREEN_HEIGHT / 3.6f), 
+						medium_x = (int) (Main.SCREEN_WIDTH / 2.91f), medium_y = (int) (Main.SCREEN_HEIGHT / 3.6f), 
+						hard_x = (int) (Main.SCREEN_WIDTH / 1.5f), hard_y = (int) (Main.SCREEN_HEIGHT / 3.6f);
 	
 	final private int start_x = 1455, start_y = 941;
 	final private int start_xx = 1794, start_yy = 984;

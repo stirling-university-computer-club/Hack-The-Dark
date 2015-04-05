@@ -1,7 +1,10 @@
+import java.awt.BorderLayout;
 import java.awt.Toolkit;
-import java.io.FileNotFoundException;
+import java.awt.event.WindowEvent;
 
 import javax.swing.JFrame;
+import javax.swing.JLayeredPane;
+import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
 
@@ -34,12 +37,65 @@ public class Main {
         frame.setVisible(true);
 	}
 	public static void process(JFrame frame, int s){
-		frame.getContentPane().add(new Process(frame, s));
+		
+		JLayeredPane lpane = new JLayeredPane();
+		frame.setLayout(new BorderLayout());
+		frame.add(lpane);
+		lpane.setBounds(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+		
+		Process backPanel = new Process(frame, s);
+		backPanel.setBounds(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+		backPanel.setOpaque(true);
+		
+		JPanel textPanel = new JPanel();
+		new Editor(textPanel, 900, 555);
+		textPanel.setBounds(40, 272, 900, 555);
+		textPanel.setOpaque(true);
+		
+        lpane.add(backPanel, new Integer(0), 0);
+        lpane.add(textPanel, new Integer(1), 0);
+		
+		//frame.getContentPane().add(new Process(frame, s));
         frame.setVisible(true);
+        
 	}
-	public static void output(JFrame frame){
+	public static void output(JFrame frame, int s){
 		Editor.writer();
-		frame.getContentPane().add(new Output());
+		
+		JLayeredPane lpane = new JLayeredPane();
+		frame.setLayout(new BorderLayout());
+		frame.add(lpane);
+		lpane.setBounds(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+		
+		Output backPanel = new Output(frame, s);
+		backPanel.setBounds(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+		backPanel.setOpaque(true);
+		
+		JPanel browserPanel = new JPanel();
+		new MiniBrowser(browserPanel, 900, 555);
+		browserPanel.setBounds(40, 272, 900, 555);
+		browserPanel.setOpaque(true);
+		
+		lpane.add(backPanel, new Integer(0), 0);
+        lpane.add(browserPanel, new Integer(1), 0);
+		
+		frame.setVisible(true);
+		
+		/*
+		JLayeredPane lpane = new JLayeredPane();
+		frame.setLayout(new BorderLayout());
+		frame.add(lpane);
+		lpane.setBounds(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+		Output bgPane = new Output(frame, s);
+		bgPane.setBounds(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+		bgPane.setOpaque(true);
+		JPanel p = new JPanel();
+		p.setBounds(40, 272, 900, 555);
+		new MiniBrowser(p, 10, 10, 100, 100);
+		p.setOpaque(true);
+		lpane.add(bgPane, new Integer(0), 0);
+		lpane.add(p, new Integer(1), 0);
+		*/
         frame.setVisible(true);
 	}
 	
@@ -52,4 +108,7 @@ public class Main {
 		frame.getContentPane().removeAll();
 	}
 
+	public static void exit(JFrame frame){
+		frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
+	}
 }
