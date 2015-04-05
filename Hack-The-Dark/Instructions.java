@@ -1,6 +1,8 @@
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -13,13 +15,45 @@ import javax.swing.JPanel;
 public class Instructions extends JPanel{
 	private BufferedImage bg;
 	
-	public Instructions(JFrame frame){
+	final private int start_x = (int) (Main.SCREEN_WIDTH / 1.32f), start_y = (int) (Main.SCREEN_HEIGHT / 1.15f);
+	final private int start_xx = (int) (Main.SCREEN_WIDTH / 1.1f), start_yy = (int) (Main.SCREEN_HEIGHT / 1.1f);
+	
+	
+	public Instructions(final JFrame frame){
 		System.out.println("output");		
 		
 		try {                
 	          bg = ImageIO.read(new File("assets/bg.gif"));
 		} catch (IOException ex) {}
 		
+		this.addMouseListener(new MouseListener(){
+
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				int x = e.getX();
+				int y = e.getY();
+
+				System.out.println("pressed " + x + "/" + y);
+
+				if ((x > start_x) && (x < start_xx) && (y > start_y) && (y < start_yy)){
+					Main.disposePanel(frame);
+					Main.start(frame);
+				}
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent arg0) {}
+
+			@Override
+			public void mouseExited(MouseEvent arg0) {}
+
+			@Override
+			public void mousePressed(MouseEvent arg0) {}
+
+			@Override
+			public void mouseReleased(MouseEvent arg0) {}
+			
+		});
 	}
 	
 	public void paintComponent(Graphics g) {
@@ -44,5 +78,8 @@ public class Instructions extends JPanel{
 		g.drawString("allowed, which means no code compiling as well. In case you are super", Main.SCREEN_WIDTH/7, (int) (Main.SCREEN_HEIGHT/3+i*9));
 		g.drawString("fast, you can press the \"Submit\" button after you finish writing the code.", Main.SCREEN_WIDTH/7, (int) (Main.SCREEN_HEIGHT/3+i*10));
 		g.drawString("Good Luck!", (int)(Main.SCREEN_WIDTH/2-Main.SCREEN_WIDTH/17.45f), (int) (Main.SCREEN_HEIGHT/3+i*11));
+		
+
+		g.drawString("[ Go back ]", (int) (Main.SCREEN_WIDTH / 1.28f),  (int) (Main.SCREEN_HEIGHT / 1.11f));
 	}
 }
