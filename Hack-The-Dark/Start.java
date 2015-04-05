@@ -54,7 +54,7 @@ public class Start extends JPanel{
 				}				
 				// quit
 				if ((x > quit_x) && (x < quit_xx) && (y > quit_y) && (y < quit_yy)){
-					
+					Main.exit(frame);
 				}
 			}
 
@@ -72,7 +72,6 @@ public class Start extends JPanel{
 			
 		});
 		
-		MiniBrowser browserWindow = new MiniBrowser(this, 100, 200, 500, 100);
 	}
 	
 	public void paintComponent(Graphics g) {

@@ -1,66 +1,41 @@
-import java.awt.Container;
-import java.awt.FlowLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.*;
+import java.awt.Dimension;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
 
-import javax.swing.*;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 
 
 public class Editor
 {
-	JFrame frame;
-	private int FRAME_WIDTH;
-	private int FRAME_HEIGHT;
-	private int AREA_ROWS;
-	private int AREA_COLUMNS;
-
-
 	private static JTextArea testEditor;
-	private JButton tempButton;
 
-	public Editor(JFrame fram, int x, int y, int width, int height)
+	public Editor(JPanel panel, int width, int height)
 	{
-		frame=fram;
-		FRAME_WIDTH = width;
-		FRAME_HEIGHT = height;
-		AREA_ROWS = x;
-		AREA_COLUMNS = y;
-	}
-
-	//	main
-	// 	Editor editor = new Editor();
-	//	frame.createGUI();
-	public void createGUI()
-	{
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		Container window = frame.getContentPane();
-		window.setLayout(new FlowLayout() );
-
-		testEditor = new JTextArea(AREA_ROWS, AREA_COLUMNS);
+		testEditor = new JTextArea();
+		testEditor.setPreferredSize(new Dimension(width-10, height-10));
 		testEditor.setText
 		("<!DOCTYPE html>\n"
 				+ "<html>\n"
 				+ "<head>\n"
 				+ "<style>\n"
-				+ "\n Your web style goes here \n \n"
+				+ "\n<!-- Your web style goes here --> \n \n"
 				+ "</style>\n"
 				+ "<title>Hack The Dark</title>\n"
 				+ "</head>\n"
 				+ "<body>\n"
 				+ "\n"
-				+ "Write your code here\n"
+				+ "<!-- Write your code here -->\n"
 				+ "\n"
 				+ "</body>\n"
 				+ "</html>");
 
-		frame.setSize(FRAME_WIDTH, FRAME_HEIGHT);
-		frame.setLocation(AREA_ROWS, AREA_COLUMNS);
-		frame.setVisible(true);
 		testEditor.setEditable(true);
 
-		JScrollPane scrollPane = new JScrollPane(testEditor);
-		window.add(scrollPane);
+		//JScrollPane scrollPane = new JScrollPane(testEditor);
+		panel.add(new JScrollPane(testEditor));
 
 	}
 	public static void writer()
@@ -68,7 +43,7 @@ public class Editor
 		Object inputText = testEditor.getText();
 		PrintStream ps;
 		try {
-			ps = new PrintStream(new FileOutputStream("htmltest.html", true));
+			ps = new PrintStream(new FileOutputStream("assets/htmlout.html", false));
 			ps.println(inputText);
 			ps.close();
 		} catch (FileNotFoundException e) {
