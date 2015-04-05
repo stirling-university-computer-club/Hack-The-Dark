@@ -1,4 +1,5 @@
 import java.awt.Toolkit;
+import java.io.FileNotFoundException;
 
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
@@ -37,6 +38,7 @@ public class Main {
         frame.setVisible(true);
 	}
 	public static void output(JFrame frame){
+		Editor.writer();
 		frame.getContentPane().add(new Output());
         frame.setVisible(true);
 	}
