@@ -137,8 +137,6 @@ public class Difficulty extends JPanel{
 			g.drawRect(x, y, size_x - i * 2, size_y - i * 2);
 			x++;
 			y++;
-		}
-		
+		}		
 	}
-
 }

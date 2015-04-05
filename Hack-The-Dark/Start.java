@@ -40,7 +40,6 @@ public class Start extends JPanel{
 				int y = e.getY();
 
 				System.out.println("pressed " + x + "/" + y);
-
 				
 				// start
 				if ((x > start_x) && (x < start_xx) && (y > start_y) && (y < start_yy)){

@@ -55,5 +55,6 @@ public class Process extends JPanel{
 		if(sec < 10) sSec = "0" + sec;
 		else		 sSec = "" + sec;
 		g.drawString("Time left: " + sMin + ":" + sSec, 200, 100);
+		
 	}
 }
