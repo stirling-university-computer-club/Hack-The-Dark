@@ -43,6 +43,11 @@ public class Main {
         frame.setVisible(true);
 	}
 	
+	public static void instructions(JFrame frame){
+		frame.getContentPane().add(new Instructions(frame));
+        frame.setVisible(true);
+	}
+	
 	public static void disposePanel(JFrame frame){
 		frame.getContentPane().removeAll();
 	}

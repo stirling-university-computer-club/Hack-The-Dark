@@ -49,7 +49,8 @@ public class Start extends JPanel{
 				
 				// instructions
 				if ((x > instructions_x) && (x < instructions_xx) && (y > instructions_y) && (y < instructions_yy)){
-					
+					Main.disposePanel(frame);
+					Main.instructions(frame);
 				}				
 				// quit
 				if ((x > quit_x) && (x < quit_xx) && (y > quit_y) && (y < quit_yy)){

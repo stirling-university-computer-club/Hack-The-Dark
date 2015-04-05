@@ -4,6 +4,8 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
@@ -39,6 +41,21 @@ public class Process extends JPanel{
 			break;
 		}
 		
+		Timer timer = new Timer();
+		timer.schedule(new TimerTask(){
+			@Override
+			public void run() {
+				// counts down seconds
+				if (sec > 0) sec--;
+				else if(min > 0) {
+					min--;
+					sec = 59;
+				}
+				else endProcess();
+				
+				repaint();
+			}			
+		}, 0, 1000);
 	}
 	
 	public void paintComponent(Graphics g) {
@@ -55,6 +72,10 @@ public class Process extends JPanel{
 		if(sec < 10) sSec = "0" + sec;
 		else		 sSec = "" + sec;
 		g.drawString("Time left: " + sMin + ":" + sSec, 200, 100);
+		
+	}
+	
+	public void endProcess(){
 		
 	}
 }
