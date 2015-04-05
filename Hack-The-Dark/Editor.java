@@ -38,7 +38,22 @@ public class Editor extends JFrame implements ActionListener
         
         testEditor = new JTextArea(AREA_ROWS, AREA_COLUMNS);
         testEditor.setText
-        ("<!DOCTYPE html><html><head><title>Hack The Dark</title></head><body>Write your code here</body></html>");
+        ("<!DOCTYPE html>\n"
+        		+ "<html>\n"
+        		+ "<head>\n"
+        		+ "<style>\n"
+        		+ "\n\n Your web style goes here \n"
+        		+ "</style>\n"
+        		+ "<title>Hack The Dark</title>\n"
+        		+ "</head>\n"
+        		+ "<body>\n"
+        		+ "\n"
+        		+ "Write your code here\n"
+        		+ "\n"
+        		+ "</body>\n"
+        		+ "</html>");
+        
+        
         testEditor.setEditable(true);
 
         JScrollPane scrollPane = new JScrollPane(testEditor);
