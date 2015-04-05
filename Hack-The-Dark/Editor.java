@@ -42,7 +42,7 @@ public class Editor extends JFrame implements ActionListener
         		+ "<html>\n"
         		+ "<head>\n"
         		+ "<style>\n"
-        		+ "\n\n Your web style goes here \n"
+        		+ "\n Your web style goes here \n \n"
         		+ "</style>\n"
         		+ "<title>Hack The Dark</title>\n"
         		+ "</head>\n"
