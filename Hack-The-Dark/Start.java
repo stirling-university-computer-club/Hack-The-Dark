@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 
@@ -18,7 +19,15 @@ public class Start extends JPanel{
 	final private float start_x = Main.SCREEN_WIDTH / 1.6f, start_y = Main.SCREEN_HEIGHT / 3.17f;
 	final private float start_xx = Main.SCREEN_WIDTH / 1.28f, start_yy = Main.SCREEN_HEIGHT / 2.63f;
 	
-	public Start(){
+	final private float instructions_x = Main.SCREEN_WIDTH / 1.69f, instructions_y = Main.SCREEN_HEIGHT / 1.99f;
+	final private float instructions_xx = Main.SCREEN_WIDTH / 1.11f, instructions_yy = Main.SCREEN_HEIGHT / 1.76f;
+
+	final private float quit_x = Main.SCREEN_WIDTH / 1.79f, quit_y = Main.SCREEN_HEIGHT / 1.46f;
+	final private float quit_xx = Main.SCREEN_WIDTH / 1.42f, quit_yy = Main.SCREEN_HEIGHT / 1.33f;
+	
+	public Start(final JFrame frame){
+		System.out.println("start");
+		
 		try {                
 	          bg = ImageIO.read(new File("assets/mainBg.gif"));
 		} catch (IOException ex) {}
@@ -35,15 +44,16 @@ public class Start extends JPanel{
 				
 				// start
 				if ((x > start_x) && (x < start_xx) && (y > start_y) && (y < start_yy)){
-					System.out.println("start");
+					Main.disposePanel(frame);
+					Main.difficulty(frame);
 				}
 				
 				// instructions
-				if ((x > 0) && (x < 0) && (y > 0) && (y < 0)){
+				if ((x > instructions_x) && (x < instructions_xx) && (y > instructions_y) && (y < instructions_yy)){
 					
 				}				
 				// quit
-				if ((x > 0) && (x < 0) && (y > 0) && (y < 0)){
+				if ((x > quit_x) && (x < quit_xx) && (y > quit_y) && (y < quit_yy)){
 					
 				}
 			}
@@ -60,10 +70,8 @@ public class Start extends JPanel{
 			@Override
 			public void mouseReleased(MouseEvent arg0) {}
 			
-			
 		});
 		
-
 		MiniBrowser browserWindow = new MiniBrowser(this, 100, 200, 500, 100);
 	}
 	

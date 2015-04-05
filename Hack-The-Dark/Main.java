@@ -18,25 +18,28 @@ public class Main {
 	}
 	
 	private static void setUpFrame(){
-		JFrame f = new JFrame("Hack The Code");
+		JFrame f = new JFrame("Hack The Dark");
 		f.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         start(f);
-        f.setVisible(true);
         
 	}
 	
 	public static void start(JFrame frame){
-		frame.getContentPane().add(new Start());
+		frame.getContentPane().add(new Start(frame));
+        frame.setVisible(true);
 	}
 	public static void difficulty(JFrame frame){
-		frame.getContentPane().add(new Difficulty());
+		frame.getContentPane().add(new Difficulty(frame));
+        frame.setVisible(true);
 	}
-	public static void process(JFrame frame){
-		frame.getContentPane().add(new Process());
+	public static void process(JFrame frame, int s){
+		frame.getContentPane().add(new Process(frame, s));
+        frame.setVisible(true);
 	}
 	public static void output(JFrame frame){
 		frame.getContentPane().add(new Output());
+        frame.setVisible(true);
 	}
 	
 	public static void disposePanel(JFrame frame){
