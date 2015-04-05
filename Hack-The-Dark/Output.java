@@ -18,6 +18,7 @@ public class Output extends JPanel{
 	private int selected;
 	
 	private int stars = 1;
+	private String evaluation = "Here is your output!";
 	
 	final private int start_x = (int) (Main.SCREEN_WIDTH / 1.32f), start_y = (int) (Main.SCREEN_HEIGHT / 1.15f);
 	final private int start_xx = (int) (Main.SCREEN_WIDTH / 1.1f), start_yy = (int) (Main.SCREEN_HEIGHT / 1.1f);
@@ -61,6 +62,23 @@ public class Output extends JPanel{
 				for (int i = 0; i < 5; i++){
 					if ((x > starssX + i * starssAddX) && (x < starssX + (int) (Main.SCREEN_WIDTH / 19.2f) + i * starssAddX) && (y > (Main.SCREEN_HEIGHT / 1.15f)) && (y < starssY)){
 						stars = i+1;
+						switch (stars) {
+						case 0:
+							evaluation = "Better luck next time!";
+							break;
+						case 1:
+							evaluation = "I know you can do it don't let you're hopes down!";							
+							break;
+						case 2:
+							evaluation = "Halfway through, well done!";
+							break;
+						case 3:
+							evaluation = "Just a few more steps and you will reach the top!";
+							break;
+						case 4:
+							evaluation = "Congradulations, I knew you were the best!";
+							break;
+						}
 						repaint();
 					}
 				}
@@ -92,7 +110,7 @@ public class Output extends JPanel{
 
 		g.setColor(new Color(0.6f, 0.6f, 0.6f, 1));
 		g.setFont(new Font("Cambria", Font.PLAIN, Main.SCREEN_WIDTH / 35));
-		g.drawString("Here is your output!", (int) (Main.SCREEN_WIDTH / 9.6f), (int) (Main.SCREEN_HEIGHT/19.2f));
+		g.drawString(evaluation, (int) (Main.SCREEN_WIDTH / 9.6f), (int) (Main.SCREEN_HEIGHT/16f));
 		g.drawString("Goal: ", (int) (Main.SCREEN_WIDTH / 1.75f), (int) (Main.SCREEN_HEIGHT/5.4f));
 		g.drawImage(goal, (int) (Main.SCREEN_WIDTH / 1.96f), (int) (Main.SCREEN_HEIGHT/3.97f), (int) (Main.SCREEN_WIDTH / 2.13f), (int) (Main.SCREEN_HEIGHT/1.95f), null);
 

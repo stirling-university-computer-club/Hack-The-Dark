@@ -90,7 +90,7 @@ public class Difficulty extends JPanel{
 
 		g.setColor(new Color(0.6f, 0.6f, 0.6f, 1));
 		g.setFont(new Font("Cambria", Font.PLAIN, Main.SCREEN_WIDTH / 24));
-		g.drawString("Choose a design you wish to hack:", (int) (Main.SCREEN_WIDTH / 9.6f), (int) (Main.SCREEN_HEIGHT / 19.2f));
+		g.drawString("Choose a design you wish to hack:", (int) (Main.SCREEN_WIDTH / 9.6f), (int) (Main.SCREEN_HEIGHT / 11f));
 		
 		// difficulty
 		g.setFont(new Font("Cambria", Font.PLAIN, Main.SCREEN_WIDTH / 35));
