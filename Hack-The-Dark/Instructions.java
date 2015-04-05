@@ -27,20 +27,22 @@ public class Instructions extends JPanel{
 		// draw background
 		g.drawImage(bg, 0, 0, Main.SCREEN_WIDTH, Main.SCREEN_HEIGHT, null);
 		
-		g.setColor(new Color(0.6f, 0.6f, 0.6f, 1));
-		g.setFont(new Font("Cambria", Font.PLAIN, Main.SCREEN_WIDTH / 40));
-		g.drawString("INSTRUCTIONS", 1920/2-150, 200);
-		g.drawString("Welcome to a brand new, still hot from the coding game which will", 1920/7, 1080/3);
-		g.drawString("not only let you to feel the horrors provided by MLH & Bloomberg", 1920/7, 1080/3+50);
-		g.drawString("while attending the \"Code in the dark\" event, but also inevitably make", 1920/7, 1080/3+100);
-		g.drawString("you to get a superb experience and win their outstanding prizes!", 1920/7, 1080/3+150);
+		float i = Main.SCREEN_HEIGHT/21.6f;
 		
-		g.drawString("The basic idea of this game is that you get a picture of a website and", 1920/7, 1080/3+250);
-		g.drawString("you will have to write a code for a webpage that would look as similar", 1920/7, 1080/3+300);
-		g.drawString("as possible in appearance to the provided one until the time runs out.", 1920/7, 1080/3+350);
-		g.drawString("You can only use HTML5 and internal CSS and no web browsing is", 1920/7, 1080/3+400);
-		g.drawString("allowed, which means no code compiling as well. In case you are super", 1920/7, 1080/3+450);
-		g.drawString("fast, you can press the \"Submit\" button after you finish writing the code.", 1920/7, 1080/3+500);
-		g.drawString("Good Luck!", 1920/2-110, 1080/3+550);
+		g.setColor(new Color(0.6f, 0.6f, 0.6f, 1));
+		g.setFont(new Font("Cambria", Font.PLAIN, Main.SCREEN_WIDTH / 50));
+		g.drawString("INSTRUCTIONS", (int)(Main.SCREEN_WIDTH/2-Main.SCREEN_WIDTH/12.8f), (int) (Main.SCREEN_HEIGHT/5.4f));
+		g.drawString("Welcome to a brand new, still hot from the coding game which will", Main.SCREEN_WIDTH/7, Main.SCREEN_HEIGHT/3);
+		g.drawString("not only let you to feel the horrors provided by MLH & Bloomberg", Main.SCREEN_WIDTH/7, (int) (Main.SCREEN_HEIGHT/3+i));
+		g.drawString("while attending the \"Code in the dark\" event, but also inevitably make", Main.SCREEN_WIDTH/7, (int) (Main.SCREEN_HEIGHT/3+i*2));
+		g.drawString("you to get a superb experience and win their outstanding prizes!", Main.SCREEN_WIDTH/7, (int) (Main.SCREEN_HEIGHT/3+i*3));
+		
+		g.drawString("The basic idea of this game is that you get a picture of a website and", Main.SCREEN_WIDTH/7, (int) (Main.SCREEN_HEIGHT/3+i*5));
+		g.drawString("you will have to write a code for a webpage that would look as similar", Main.SCREEN_WIDTH/7, (int) (Main.SCREEN_HEIGHT/3+i*6));
+		g.drawString("as possible in appearance to the provided one until the time runs out.", Main.SCREEN_WIDTH/7, (int) (Main.SCREEN_HEIGHT/3+i*7));
+		g.drawString("You can only use HTML5 and internal CSS and no web browsing is", Main.SCREEN_WIDTH/7, (int) (Main.SCREEN_HEIGHT/3+i*8));
+		g.drawString("allowed, which means no code compiling as well. In case you are super", Main.SCREEN_WIDTH/7, (int) (Main.SCREEN_HEIGHT/3+i*9));
+		g.drawString("fast, you can press the \"Submit\" button after you finish writing the code.", Main.SCREEN_WIDTH/7, (int) (Main.SCREEN_HEIGHT/3+i*10));
+		g.drawString("Good Luck!", (int)(Main.SCREEN_WIDTH/2-Main.SCREEN_WIDTH/17.45f), (int) (Main.SCREEN_HEIGHT/3+i*11));
 	}
 }

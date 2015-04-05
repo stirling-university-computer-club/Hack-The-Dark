@@ -19,9 +19,11 @@ public class Output extends JPanel{
 	
 	private int stars = 1;
 	
-	final private int start_x = 1500, start_y = 941;
-	final private int start_xx = 1845, start_yy = 984;
-		
+	final private int start_x = (int) (Main.SCREEN_WIDTH / 1.32f), start_y = (int) (Main.SCREEN_HEIGHT / 1.15f);
+	final private int start_xx = (int) (Main.SCREEN_WIDTH / 1.1f), start_yy = (int) (Main.SCREEN_HEIGHT / 1.1f);
+	
+	final private int starssX = (int) (Main.SCREEN_WIDTH / 2.4f), starssAddX = (int) (Main.SCREEN_WIDTH / 16), starssY = (int) (Main.SCREEN_HEIGHT / 1.11f);
+	
 	public Output(final JFrame frame, int s){
 		System.out.println("output");		
 		
@@ -57,7 +59,7 @@ public class Output extends JPanel{
 				System.out.println("pressed " + x + "/" + y);
 				// stars
 				for (int i = 0; i < 5; i++){
-					if ((x > 800 + i * 120) && (x < 900 + i * 120) && (y > 935) && (y < 975)){
+					if ((x > starssX + i * starssAddX) && (x < starssX + (int) (Main.SCREEN_WIDTH / 19.2f) + i * starssAddX) && (y > (Main.SCREEN_HEIGHT / 1.15f)) && (y < starssY)){
 						stars = i+1;
 						repaint();
 					}
@@ -90,12 +92,11 @@ public class Output extends JPanel{
 
 		g.setColor(new Color(0.6f, 0.6f, 0.6f, 1));
 		g.setFont(new Font("Cambria", Font.PLAIN, Main.SCREEN_WIDTH / 35));
-		g.drawString("Here is your output!", 200, 100);
-		g.fillRect(40, 272, 900, 555);
-		g.drawString("Goal: ", 1100, 200);
-		g.drawImage(goal, 980, 272, 900, 555, null);
+		g.drawString("Here is your output!", (int) (Main.SCREEN_WIDTH / 9.6f), (int) (Main.SCREEN_HEIGHT/19.2f));
+		g.drawString("Goal: ", (int) (Main.SCREEN_WIDTH / 1.75f), (int) (Main.SCREEN_HEIGHT/5.4f));
+		g.drawImage(goal, (int) (Main.SCREEN_WIDTH / 1.96f), (int) (Main.SCREEN_HEIGHT/3.97f), (int) (Main.SCREEN_WIDTH / 2.13f), (int) (Main.SCREEN_HEIGHT/1.95f), null);
 
-		g.drawString("Evaluate yourself!", 200, 975);
+		g.drawString("Evaluate yourself!", (int) (Main.SCREEN_WIDTH / 9.6f), starssY);
 		
 		for (int i = 0; i < 5; i++){
 			
@@ -104,10 +105,10 @@ public class Output extends JPanel{
 			else
 				g.setColor(new Color(0.6f, 0.6f, 0.6f, 1));
 			
-			g.drawString("<*>", 800 + i * 120, 975);
+			g.drawString("<*>", starssX + i * starssAddX, starssY);
 		}
 		// play again
 		g.setColor(new Color(0.6f, 0.6f, 0.6f, 1));
-		g.drawString("[ Play again ]", 1500, 975);
+		g.drawString("[ Play again ]", (int) (Main.SCREEN_WIDTH / 1.28f), starssY);
 	}
 }

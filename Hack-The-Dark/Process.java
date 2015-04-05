@@ -21,8 +21,8 @@ public class Process extends JPanel{
 	private int selected;
 	private int min, sec = 0;
 	
-	final private int start_x = 1455, start_y = 941;
-	final private int start_xx = 1794, start_yy = 984;
+	final private int start_x = (int) (Main.SCREEN_WIDTH / 1.32f), start_y = (int) (Main.SCREEN_HEIGHT / 1.15f);
+	final private int start_xx = (int) (Main.SCREEN_WIDTH / 1.1f), start_yy = (int) (Main.SCREEN_HEIGHT / 1.1f);
 	
 	private Timer timer;
 	
@@ -112,15 +112,14 @@ public class Process extends JPanel{
 		else		 sMin = "" + min;
 		if(sec < 10) sSec = "0" + sec;
 		else		 sSec = "" + sec;
-		g.drawString("Time left: " + sMin + ":" + sSec, 200, 100);
+		g.drawString("Time left: " + sMin + ":" + sSec, (int) (Main.SCREEN_WIDTH / 9.6f), (int) (Main.SCREEN_HEIGHT/19.2f));
 		
-		g.drawString("Code Here: ", 200, 200);
-		g.fillRect(40, 272, 900, 555);
-		g.drawString("Goal: ", 1100, 200);
-		g.drawImage(goal, 980, 272, 900, 555, null);
+		g.drawString("Code Here: ", (int) (Main.SCREEN_WIDTH / 9.6f), (int) (Main.SCREEN_HEIGHT/5.4f));
+		g.drawString("Goal: ", (int) (Main.SCREEN_WIDTH / 1.75f), (int) (Main.SCREEN_HEIGHT/5.4f));
+		g.drawImage(goal, (int) (Main.SCREEN_WIDTH / 1.96f), (int) (Main.SCREEN_HEIGHT/3.97f), (int) (Main.SCREEN_WIDTH / 2.13f), (int) (Main.SCREEN_HEIGHT/1.95f), null);
 		
 		// starting game
-		g.drawString("[ Submit ]", 1450, 975);
+		g.drawString("[ Submit ]", (int) (Main.SCREEN_WIDTH / 1.32f), (int) (Main.SCREEN_HEIGHT/1.11f));
 	}
 	
 	public void endProcess(JFrame frame){
